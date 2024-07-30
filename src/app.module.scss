@@ -1,0 +1,80 @@
+.container {
+  @apply flex flex-col lg:flex-row mx-auto py-4 md:pt-0 md:pb-8 px-6 lg:px-2 max-w-[1440px] lg:h-[100vh];
+  @apply gap-y-10 lg:gap-y-0;
+
+  .left {
+    @apply flex w-full h-full justify-center items-center text-gray-50;
+
+    div {
+      @apply md:w-[70%] lg:w-[80%] mt-8 md:mt-16 lg:mt-0 text-center lg:text-left;
+
+      h2 {
+        @apply font-black text-3xl md:text-5xl;
+      }
+
+      p {
+        @apply mt-2 lg:mt-3 md:text-xl;
+      }
+    }
+  }
+
+  .right {
+    @apply flex w-full h-full justify-center items-center;
+
+    .card {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 16px;
+      @apply bg-gray-100 rounded-[10px] p-4 w-full md:w-[80%] lg:w-[90%];
+
+      .imgContainer {
+        @apply flex w-full h-[300px] md:h-[400px] bg-gray-2 justify-center items-center;
+
+        img {
+          @apply w-full h-full object-cover;
+        }
+
+        svg {
+          @apply text-gray-3;
+        }
+
+        canvas {
+          @apply w-full h-full;
+        }
+
+        .hasError {
+          @apply text-red-500 text-lg text-center;
+        }
+
+        .noDetection {
+          @apply text-center text-gray-4 font-bold text-lg;
+        }
+      }
+
+      .btnContainer {
+        @apply flex flex-col md:flex-row gap-y-2 md:gap-y-0 justify-center mt-3;
+
+        input {
+          @apply disabled:cursor-not-allowed;
+        }
+
+        button {
+          @apply flex text-sm items-center justify-center cursor-pointer px-4 text-gray-100 py-2 rounded-[10px];
+          @apply bg-gradient-to-r from-color1 to-color3 hover:from-color3 hover:to-color1;
+          @apply disabled:opacity-40 disabled:cursor-not-allowed;
+          @apply disabled:from-color1 disabled:to-color3;
+
+          label {
+            @apply cursor-pointer;
+          }
+        }
+
+        button:disabled label {
+          @apply cursor-not-allowed;
+        }
+
+        .btnReset {
+          @apply md:mx-3;
+        }
+      }
+    }
+  }
+}
